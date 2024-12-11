@@ -10,6 +10,7 @@ public class UI : MonoBehaviour
 {
     public Image firstCase, secondCase, thirdCase, fourthCase;
     public GameObject Inv;
+    bool bIsOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,15 @@ public class UI : MonoBehaviour
 
     public void OpenInventory(InputAction.CallbackContext context)
     {
-        Inv.SetActive(true);
+        if(bIsOpen == false)
+        {
+            Inv.SetActive(true);
+            bIsOpen = true;
+        }
+        else
+        {
+            Inv.SetActive(false);
+            bIsOpen = false;
+        }
     }
 }
