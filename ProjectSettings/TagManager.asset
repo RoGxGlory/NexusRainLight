@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Treasure
+  - Weapon
+  - Material
   layers:
   - Default
   - TransparentFX
