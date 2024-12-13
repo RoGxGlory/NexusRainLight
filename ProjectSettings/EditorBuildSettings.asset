@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/03_Scenes/CharacterTestMap.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/03_Scenes/Main Menu.unity
+    guid: 86b778885bc337b4395f57e894b4a106
+  - enabled: 1
+    path: Assets/03_Scenes/Market.unity
+    guid: d2626920ebdb2ef41b3fbc77cb009209
+  - enabled: 1
+    path: Assets/03_Scenes/Debt.unity
+    guid: b5c83f25ea5ab2945928ba4f0fd2bc99
   m_configObjects: {}
