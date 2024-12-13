@@ -49,6 +49,7 @@ public class UI : MonoBehaviour
         }
     }
 
+    #region MainMenu
     public void OpenMarketLevel()
     {
         SceneManager.LoadScene("Market");
@@ -61,4 +62,5 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("CharacterTestMap");
     }
+    #endregion
 }

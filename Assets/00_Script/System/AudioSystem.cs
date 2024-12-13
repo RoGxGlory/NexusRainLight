@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AudioSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+public string ReturnAudio()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return "Audio is now playing";
     }
 }
