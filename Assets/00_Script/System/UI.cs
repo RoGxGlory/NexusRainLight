@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class UI : MonoBehaviour
@@ -46,5 +47,18 @@ public class UI : MonoBehaviour
             Inv.SetActive(false);
             bIsOpen = false;
         }
+    }
+
+    public void OpenMarketLevel()
+    {
+        SceneManager.LoadScene("Market");
+    }
+    public void OpenDebtLevel()
+    {
+        SceneManager.LoadScene("Debt");
+    }
+    public void OpenGameLevel()
+    {
+        SceneManager.LoadScene("CharacterTestMap");
     }
 }
