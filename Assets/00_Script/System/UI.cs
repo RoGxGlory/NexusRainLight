@@ -50,6 +50,11 @@ public class UI : MonoBehaviour
     }
 
     #region MainMenu
+
+    public void OpenMenuLevel()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
     public void OpenMarketLevel()
     {
         SceneManager.LoadScene("Market");

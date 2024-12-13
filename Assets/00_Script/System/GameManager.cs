@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     public GameState State;
 
@@ -21,7 +21,13 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
+            Instance = FindObjectOfType<GameManager>();
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("Instance not found" + Instance);
+        }
+        else
+        {
+            Debug.Log("Instance already found" + Instance);
         }
         audioSystem = gameObject.GetComponent<AudioSystem>();
     }
