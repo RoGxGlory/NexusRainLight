@@ -998,7 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   value: 5
-  manager: {fileID: 0}
+  manager: {fileID: 488408248}
 --- !u!1 &1131608910
 GameObject:
   m_ObjectHideFlags: 0
