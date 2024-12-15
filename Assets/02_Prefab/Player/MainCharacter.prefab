@@ -37,6 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2361211790189952962}
+  - {fileID: 4147326089981403412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7847239802775225696
@@ -200,6 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e02a013b2877d4ca1a7d21d558b50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 0}
+  LvlShip: {fileID: 0}
   _rb: {fileID: 0}
   _groundDetector: {fileID: 0}
   _animator: {fileID: 0}
@@ -209,7 +212,10 @@ MonoBehaviour:
   _jumpForce: 0
   collectableObject: {fileID: 0}
   Use: {fileID: 0}
+  hand: {fileID: 0}
+  _actionType: 
   inventory: []
+  equipment: []
 --- !u!114 &2914135625417012207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +353,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 292474b5-f2e8-4c9b-9ef2-5cead01253ed
     m_ActionName: Player/Attak[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a5202f95-3080-49fd-a919-ec4a632b9d68
+    m_ActionName: Player/OpenContext[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -373,6 +383,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &2483934182015202403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4147326089981403412}
+  m_Layer: 0
+  m_Name: hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4147326089981403412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2483934182015202403}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4310086692947026706}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5837556964599529063
 GameObject:
   m_ObjectHideFlags: 0

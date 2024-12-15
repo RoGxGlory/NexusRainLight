@@ -47,7 +47,7 @@
                     "id": "34e79d6e-716e-4c19-b68f-5a20f8d963e7",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
@@ -305,7 +305,7 @@
                     "name": "",
                     "id": "fc5b1108-eb91-424b-a481-b4c14e304cec",
                     "path": "<Keyboard>/e",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Collect",

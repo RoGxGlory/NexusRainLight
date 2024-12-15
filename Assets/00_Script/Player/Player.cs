@@ -19,9 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _isGrounded = false;
     [SerializeField] private Vector2 _Move;
     [SerializeField] private float _Speed, _jumpForce;
-    [SerializeField] private GameObject collectableObject, Use;
+    [SerializeField] private GameObject collectableObject, Use, hand;
     [SerializeField] private string _actionType = null;
-
     public List<GameObject> inventory = new List<GameObject>();
     [SerializeField]public GameObject[] equipment;
 
@@ -33,6 +32,7 @@ public class Player : MonoBehaviour
         _animator = GetComponent<Animator>();
         UI = GameObject.Find("Canvas").GetComponent<UI>();
         LvlShip = GameObject.Find("Ship").GetComponent<LvlShip>();
+        //hand = GameObject.Find("hand").gameObject;
         _isGrounded = false;
         _Speed = 5;
         _jumpForce = 7;
@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
     {
         _animator.SetFloat("VelocityY", _rb.velocity.y);
         _animator.SetBool("IsGrounded", _isGrounded);
+        //if (equipment[1] != null) 
+        //_animator.SetInteger("hand", equipment[0].gameObject.GetComponent<Collectible>().weaponState);
 
         if (_rb.velocity.x > 0)
         {
@@ -114,26 +116,35 @@ public class Player : MonoBehaviour
     }
     public void Collect(InputAction.CallbackContext context)
     {
-        if (collectableObject)
+        if (context.started)
         {
-            inventory.Add(collectableObject);
-            collectableObject.transform.position = new Vector2(99, 99);
-            if(collectableObject.transform.tag == "Weapon")
-                equipment[0] = collectableObject;
-            UI.UpdateUI(collectableObject.GetComponent<SpriteRenderer>().sprite, collectableObject.transform.tag);
-            collectableObject = null;
+            print("collect");
+            if (collectableObject)
+            {
+                collectableObject.transform.position = new Vector2(99, 99);
+                inventory.Add(collectableObject);
+                if (collectableObject.transform.tag == "Weapon")
+                    equipment[0] = collectableObject;
+                UI.UpdateUI(collectableObject.GetComponent<SpriteRenderer>().sprite, collectableObject.transform.tag);
+                collectableObject = null;
+                Equip();
+            }
         }
     }
-
     public void Equip()
     {
-
+        if (equipment[0] != null)
+        {
+            equipment[0].transform.parent = hand.transform;
+            equipment[0].transform.position = Vector2.zero;
+        }
     }
 
     public void Attack(InputAction.CallbackContext context)
     {
 
             _animator.SetTrigger("Attack");
+
         
     }
 }
