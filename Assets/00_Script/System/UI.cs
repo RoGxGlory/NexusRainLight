@@ -5,17 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEditor.SearchService;
 
 
 public class UI : MonoBehaviour
 {
     public Image firstCase, secondCase, thirdCase, fourthCase;
     public GameObject Inv;
+    public GameManager manager;
+
     bool bIsOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = FindObjectOfType<GameManager>();
+        OnLevelLoaded();
     }
 
     // Update is called once per frame
@@ -24,6 +29,7 @@ public class UI : MonoBehaviour
         
     }
 
+    #region Inventory
     public void UpdateUI(Sprite collected, string type)
     { 
         if(type == "Weapon")
@@ -48,24 +54,38 @@ public class UI : MonoBehaviour
             bIsOpen = false;
         }
     }
+    #endregion
 
-    #region MainMenu
+    #region Scene Management
+
+    private void OnLevelLoaded()
+    {
+        manager.LoadVariables();
+    }
 
     public void OpenMenuLevel()
     {
-        SceneManager.LoadScene("Main Menu");
+        string SceneToLoad = "Main Menu";
+        SceneManager.LoadScene(SceneToLoad);
+        manager.MenuSceneChange(SceneToLoad);
     }
     public void OpenMarketLevel()
     {
-        SceneManager.LoadScene("Market");
+        string SceneToLoad = "Market";
+        SceneManager.LoadScene(SceneToLoad);
+        manager.MenuSceneChange(SceneToLoad);
     }
     public void OpenDebtLevel()
     {
-        SceneManager.LoadScene("Debt");
+        string SceneToLoad = "Debt";
+        SceneManager.LoadScene(SceneToLoad);
+        manager.MenuSceneChange(SceneToLoad);
     }
     public void OpenGameLevel()
     {
-        SceneManager.LoadScene("CharacterTestMap");
+        string SceneToLoad = "CharacterTestMap";
+        SceneManager.LoadScene(SceneToLoad);
+        manager.MenuSceneChange(SceneToLoad);
     }
     #endregion
 }
